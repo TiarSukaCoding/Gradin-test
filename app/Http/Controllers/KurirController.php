@@ -14,7 +14,8 @@ class KurirController extends Controller
      */
     public function index()
     {
-        //
+        $kurir = Kurir::all();
+        return view('kurir.index', compact(['kurir']));
     }
 
     /**

@@ -13,9 +13,16 @@ class CreateKurirsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kurirs', function (Blueprint $table) {
+        Schema::create('kurir', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nama');
+            $table->UnsignedBigInteger('j_layanan_id');
+            $table->UnsignedBigInteger('jenis_id');
+            $table->UnsignedBigInteger('barang_id');
+            $table->UnsignedBigInteger('customer_id');
+            $table->string('alamat');
+            $table->date('estimasi');
+            $table->integer('rating')->nullable();
         });
     }
 
@@ -26,6 +33,6 @@ class CreateKurirsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kurirs');
+        Schema::dropIfExists('kurir');
     }
 }
