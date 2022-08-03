@@ -43,11 +43,11 @@ class CreateKurir extends Component
 
         $kurir = Kurir::create([
             'nama' => $this->nama,
-            'j_layanan_id' => $this->barang_id,
-            'jenis_id' => $this->barang_id,
+            'j_layanan_id' => $this->j_layanan_id,
+            'jenis_id' => $this->jenis_id,
             'barang_id' => $this->barang_id,
             'customer_id' => $this->customer_id,
-            'alamat' => $this->customer_id,
+            'alamat' => $this->alamat,
             'estimasi' => $tanggal,
         ]);
 

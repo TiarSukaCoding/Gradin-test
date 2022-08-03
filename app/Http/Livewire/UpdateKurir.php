@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class UpdateKurir extends Component
 {
-    public $statusUp = false;
     public $nama,$j_layanan_id,$jenis_id,$barang_id,$customer_id,$alamat,$kurirId;
 
     protected $listeners = [
@@ -32,6 +31,7 @@ class UpdateKurir extends Component
 
     public function update()
     {
+        dd($this->kurirId);
         $this->validate([
             'nama' => 'required',
             'j_layanan_id' => 'required|numeric',
@@ -61,11 +61,11 @@ class UpdateKurir extends Component
             $kurir = Kurir::findOrFail($this->kurirId);
             $kurir->update([
                 'nama' => $this->nama,
-                'j_layanan_id' => $this->barang_id,
-                'jenis_id' => $this->barang_id,
+                'j_layanan_id' => $this->j_layanan_id,
+                'jenis_id' => $this->jenis_id,
                 'barang_id' => $this->barang_id,
                 'customer_id' => $this->customer_id,
-                'alamat' => $this->customer_id,
+                'alamat' => $this->alamat,
                 'estimasi' => $tanggal,
             ]);
 

@@ -22,7 +22,6 @@ class IndexKurir extends Component
 
     public function getKurir($id)
     {
-        $this->statusUpdate = true;
         $kurir = Kurir::findOrFail($id);
         $this->emit('getKurir', $kurir);
     }
